@@ -1,9 +1,10 @@
+/* eslint-disable react/jsx-no-bind */
 /* eslint-disable import/no-unresolved */
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 import { setFavorite, deleteFavorite } from "../actions";
-import '../assets/styles/components/Carouselitem.scss';
+import '../assets/styles/components/CarouselItem.scss';
 import playIcon from "../assets/static/play-icon.png";
 import plusIcon from "../assets/static/plus-icon.png";
 import remuveIcon from "../assets/static/remove-icon.png";

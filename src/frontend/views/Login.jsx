@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 /* eslint-disable react/button-has-type */
 import React, { useState } from "react";
 import { connect } from "react-redux";
@@ -5,7 +6,7 @@ import { Link } from "react-router-dom";
 import { loginRequest } from '../actions';
 import googleicon from "../assets/static/google-icon.png";
 import twittericon from "../assets/static/twitter-icon.png";
-import "../assets/styles/components/login.scss";
+import "../assets/styles/components/Login.scss";
 
 const Login = (props) => {
   const [form, setValues] = useState({
@@ -47,7 +48,7 @@ const Login = (props) => {
           <div className="login__container--remember-me">
             
             <input type="checkbox" id="cbox1" value="first_checkbox" />
-              Recuérdame
+            Recuérdame
             
             <a href="/">Olvidé mi contraseña</a>
           </div>

@@ -23,7 +23,7 @@ const Header = (props) => {
       location.pathname === "/login" || location.pathname === "/register" ?
         "header header__login-register" :
         "header"
-    }
+    } 
     >
       <Link to="/">
         <img className="header__img" src={logo} alt="Platzi Video" />
@@ -49,13 +49,14 @@ const Header = (props) => {
           }
           {
             hasUser ? (
+              // eslint-disable-next-line react/jsx-no-bind
               <li onClick={handleLogout}>
                 <Link to="/">Cerrar Sesión</Link>
               </li>
             ) : (
               <li>
                 <Link to="/login">
-                Iniciar Sesión
+                  Iniciar Sesión
                 </Link>
               </li>
             )
