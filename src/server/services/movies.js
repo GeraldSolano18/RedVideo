@@ -10,7 +10,6 @@ class moviesServices {
 
   async getMovies({ tags }) {
     const query = tags && { tag: { $in: tags } };
-    //throw new Error('NO JODAS PERRO CLASE CAGADA');
     const movies = await this.mongoDB.getAll(this.collection, query);
     return movies || [];
   }

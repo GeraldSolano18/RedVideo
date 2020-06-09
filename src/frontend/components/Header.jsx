@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import gravatar from '../utils/gravatar';
 import { logoutRequest } from '../actions';
 import '../assets/styles/components/Header.scss';
-import logo from '../assets/static/logo-platzi-video-BW2.png';
+import logo from '../assets/static/logo.svg';
 import usericon from '../assets/static/user-icon.png';
 
 const Header = (props) => {
@@ -26,13 +26,13 @@ const Header = (props) => {
     } 
     >
       <Link to="/">
-        <img className="header__img" src={logo} alt="Platzi Video" />
+        <img className="header__img" src={logo} alt="Red video" />
       </Link>
 
       <div className="header__menu">
         <div className="header__menu--profile">
 
-          {
+          { 
             hasUser ? //has user es true?
               <img src={gravatar(user.email)} alt={user.email} className="gravatar_icon" /> : 
               <img src={usericon} alt="Hola" />
@@ -54,11 +54,19 @@ const Header = (props) => {
                 <Link to="/">Cerrar Sesión</Link>
               </li>
             ) : (
-              <li>
-                <Link to="/login">
-                  Iniciar Sesión
-                </Link>
-              </li>
+              <div>
+                <li>
+                  <Link to="/login">
+                    Iniciar Sesión
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/register">
+                    Registe
+                  </Link>
+                </li>
+              </div>
+              
             )
           }
 
