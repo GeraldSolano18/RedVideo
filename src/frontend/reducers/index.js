@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 const reducer = (state, action) => {
   switch (action.type) {
     case 'SET_FAVORITE':
@@ -37,6 +38,25 @@ const reducer = (state, action) => {
         playing: state.trends.concat(state.originals).find((item) => item.id === Number(action.payload)) || [],
       };
 
+    case 'FILTER_VIDEO': {
+      //Valor que viene del input
+      const inpuValue = action.payload;
+      //La lista de los dos array concatenados 
+      const list = state.trends.concat(state.originals);
+      let movieListByName ;
+
+      console.log('Este es el input value en el deduccer', inpuValue);
+      if (inpuValue === '') {
+        console.log('ahorita esta vacio deberia traer nada'); 
+        movieListByName = [];
+      } else {
+        movieListByName = list.filter((movie) => movie.title.toLowerCase().includes(inpuValue.toLowerCase()));
+      }
+
+      return { ...state, movieListByName };   
+    }
+
+    // eslint-disable-next-line no-fallthrough
     default:
       return state;
 

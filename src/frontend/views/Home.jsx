@@ -7,18 +7,22 @@ import Carousel from "../components/Carousel";
 import CarouselItem from "../components/CarouselItem";
 import "../assets/styles/app.scss";
 
-const Home = ({ myList, trends, originals }) => {
-  //const[videos, setVideos]=useState([]);
-  // const [videos, setVideos] = useState({ mylist: [], trends: [], originals: [] });
-  // useEffect(() => {
-  //   fetch('http://localhost:3000/initalState')
-  //     .then(response => response.json())
-  //     .then(data => setVideos(data))
-  // }, [])
+const Home = ({ myList, trends, originals, movieListByName }) => {
 
+  console.log('movies list by name del estado ', movieListByName);
   return (
     <>
       <Search />
+      {movieListByName.length === 0 ?
+        null : (
+          <Categories titulo="Resultado de la busqueda... ">
+            <Carousel>
+              {movieListByName.map((item) => (
+                <CarouselItem key={item.id} {...item} />
+              ))}
+            </Carousel>
+          </Categories>
+        )}
       {myList.length > 0 && (
         <Categories titulo="Mi lista">
           <Carousel>
@@ -56,6 +60,7 @@ const mapStateToProps = (state) => {
     myList: state.myList,
     trends: state.trends,
     originals: state.originals,
+    movieListByName: state.movieListByName,
   };
 };
 

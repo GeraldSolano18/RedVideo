@@ -27,3 +27,9 @@ export const getVideoSource = (payload) => ({
   type: "GET_VIDEO_SOURCE",
   payload,
 });
+
+export const filterVideo = (video) => ({
+  type: "FILTER_VIDEO",
+  payload: video,
+});
+

@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import gravatar from '../utils/gravatar';
 import { logoutRequest } from '../actions';
 import '../assets/styles/components/Header.scss';
-import logo from '../assets/static/logo.svg';
+import logo from '../assets/static/logoGreen.svg';
 import usericon from '../assets/static/user-icon.png';
 
 const Header = (props) => {
@@ -21,7 +21,7 @@ const Header = (props) => {
     <header className={//verifica si el componente Header esta en la seccion de de login o de registro, si
       //es asi pasa otro color al background 
       location.pathname === "/login" || location.pathname === "/register" ?
-        "header header__login-register" :
+        "header " :
         "header"
     } 
     >
